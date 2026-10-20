@@ -1,0 +1,516 @@
+%PDF-1.3
+%ºß¬à
+3 0 obj
+<</Type /Page
+/Parent 1 0 R
+/Resources 2 0 R
+/MediaBox [0 0 595.2799999999999727 841.8899999999999864]
+/Contents 4 0 R
+>>
+endobj
+4 0 obj
+<<
+/Length 7681
+>>
+stream
+0.200025 w
+0 G
+0.06 0.09 0.16 rg
+0. 841.8899999999999864 595.2799999999999727 -86. re
+f
+BT
+/F2 10 Tf
+11.5 TL
+0.647 0.953 0.988 rg
+56. 811.8899999999999864 Td
+(DATA STRUCTURES  •  QUEUES  •  C++) Tj
+ET
+BT
+/F2 20 Tf
+23. TL
+1. g
+56. 789.8899999999999864 Td
+(Real-World Apps That Require Queues) Tj
+ET
+BT
+/F1 10 Tf
+11.5 TL
+0.796 0.835 0.882 rg
+56. 769.8899999999999864 Td
+(Why queues are necessary  •  does Uber use them?  •  built app: ride-dispatch queue) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.059 0.09 0.165 rg
+56. 729.8899999999999864 Td
+(1. What is a queue?) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 721.8899999999999864 Td
+(A queue is a FIFO \(first-in, first-out\) collection: items join at the rear and leave from the front, like a taxi) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 707.8899999999999864 Td
+(line. Core operations are enqueue \(join, O\(1\)\), dequeue \(serve next, O\(1\)\), and peek \(look at the front) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 693.8899999999999864 Td
+(without removing\). Unlike an array, position is managed for you; unlike a stack, the oldest item leaves) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 679.8899999999999864 Td
+(first. Fairness is the point: whoever waited longest is served next.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.059 0.09 0.165 rg
+56. 661.8899999999999864 Td
+(2. Why queues are necessary — and does Uber use them?) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 653.8899999999999864 Td
+(Yes. Uber matches riders to drivers through per-zone request queues: your request joins the rear, the) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 639.8899999999999864 Td
+(dispatcher dequeues the front and assigns the nearest free driver. Airport pickups show a literal virtual) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 625.8899999999999864 Td
+(queue \('you are #3 in line'\). Behind the scenes, trip, payment, and notification events stream through) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 611.8899999999999864 Td
+(message queues so spikes never lose a booking. Surge pricing is queue depth made visible: when the) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 597.8899999999999864 Td
+(waiting line grows faster than drivers drain it, prices rise to rebalance. Without queues there is no fair) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 583.8899999999999864 Td
+(ordering, no buffering of spikes, and no decoupling of riders asking from drivers serving.) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.059 0.09 0.165 rg
+56. 565.8899999999999864 Td
+(3. Six real-world uses \(C++\)) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 557.8899999999999864 Td
+(1\) Ride-hailing dispatch \(BUILT\): RideRequest q[8]; enqueue on request, dequeue on match.) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 543.8899999999999864 Td
+(2\) Printers: jobs print in arrival order while the printer is busy.) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 529.8899999999999864 Td
+(3\) Call centers: 'your call is third in line' is a live queue size.) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 515.8899999999999864 Td
+(4\) Airport taxi ranks and checkout lines: physical FIFOs.) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 501.8899999999999864 Td
+(5\) Server request buffers: web/API requests wait their turn under load.) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 487.8899999999999864 Td
+(6\) Task schedulers and BFS: operating systems and graph search process oldest-first.) Tj
+ET
+0.06 0.09 0.16 rg
+62. 473.8899999999999864 m
+533.2799999999999727 473.8899999999999864 l
+536.5937084989847108 473.8899999999999864 539.2799999999999727 471.2037084989847244 539.2799999999999727 467.8899999999999864 c
+539.2799999999999727 429.8899999999999864 l
+539.2799999999999727 426.5762915010152483 535.9662915010152346 423.8899999999999864 533.2799999999999727 423.8899999999999864 c
+62. 423.8899999999999864 l
+58.6862915010152406 423.8899999999999864 56. 427.2037084989847244 56. 429.8899999999999864 c
+56. 467.8899999999999864 l
+56. 471.2037084989847244 59.3137084989847594 473.8899999999999864 62. 473.8899999999999864 c
+h
+f
+BT
+/F5 9 Tf
+10.3499999999999996 TL
+0.647 0.953 0.988 rg
+64. 459.8899999999999864 Td
+(RideQueue q;                 // circular array, CAPACITY 8) Tj
+T* (q.enqueue\(101, "Ama", ...\);  // join the rear) Tj
+T* (q.dequeue\(trip\);             // serve the front -> driver) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.059 0.09 0.165 rg
+56. 411.8899999999999864 Td
+(4. Built application: ride-dispatch queue) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 403.8899999999999864 Td
+(The accompanying app is a dispatch board whose logic mirrors ridequeue.cpp exactly: a circular array) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 389.8899999999999864 Td
+(with front index, rear index, and count. Request Ride enqueues \(fails with overflow at 8/8\); Dispatch) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 375.8899999999999864 Td
+(dequeues the front to a driver; Peek shows who is next; Cancel removes a booking by shifting the tail,) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 361.8899999999999864 Td
+(O\(n\). The board shows live positions \(#1 FRONT...\), ETAs, front/rear pointers, served total, and every) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 347.8899999999999864 Td
+(action prints the C++ it mirrors.) Tj
+ET
+0.06 0.09 0.16 rg
+62. 333.8899999999999864 m
+533.2799999999999727 333.8899999999999864 l
+536.5937084989847108 333.8899999999999864 539.2799999999999727 331.2037084989847244 539.2799999999999727 327.8899999999999864 c
+539.2799999999999727 289.8899999999999864 l
+539.2799999999999727 286.5762915010152483 535.9662915010152346 283.8899999999999864 533.2799999999999727 283.8899999999999864 c
+62. 283.8899999999999864 l
+58.6862915010152406 283.8899999999999864 56. 287.2037084989847244 56. 289.8899999999999864 c
+56. 327.8899999999999864 l
+56. 331.2037084989847244 59.3137084989847594 333.8899999999999864 62. 333.8899999999999864 c
+h
+f
+BT
+/F5 9 Tf
+10.3499999999999996 TL
+0.647 0.953 0.988 rg
+64. 319.8899999999999864 Td
+(g++ -std=c++17 -O2 -o ridequeue ridequeue.cpp && ./ridequeue   // Windows PowerShell:) Tj
+T* (//   g++ -std=c++17 -O2 -o ridequeue ridequeue.cpp) Tj
+T* (//   .\\ridequeue) Tj
+ET
+BT
+/F2 14 Tf
+16.0999999999999979 TL
+0.059 0.09 0.165 rg
+56. 271.8899999999999864 Td
+(5. Circular array vs linked queue vs std::queue) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 263.8899999999999864 Td
+(Circular array \(this project\): fixed memory, no allocation, wraparound indices; best for learning and) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 249.8899999999999864 Td
+(embedded. Linked queue: growable, one allocation per item, pointer chasing. std::queue: production) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 235.8899999999999864 Td
+(adapter over deque/list with push/pop/front. Key lesson: the ring reuses freed front slots, so the line) Tj
+ET
+BT
+/F1 10.5 Tf
+12.0749999999999993 TL
+0.118 0.161 0.231 rg
+56. 221.8899999999999864 Td
+(never 'slides off' the end of the buffer.) Tj
+ET
+BT
+/F1 9 Tf
+10.3499999999999996 TL
+0.58 0.639 0.722 rg
+56. 24. Td
+(Queues in the Real World — explanation  •  page 1 of 1) Tj
+ET
+endstream
+endobj
+1 0 obj
+<</Type /Pages
+/Kids [3 0 R ]
+/Count 1
+>>
+endobj
+5 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+6 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+7 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+8 0 obj
+<<
+/Type /Font
+/BaseFont /Helvetica-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+9 0 obj
+<<
+/Type /Font
+/BaseFont /Courier
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+10 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+11 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-Oblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+12 0 obj
+<<
+/Type /Font
+/BaseFont /Courier-BoldOblique
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+13 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Roman
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+14 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Bold
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+15 0 obj
+<<
+/Type /Font
+/BaseFont /Times-Italic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+16 0 obj
+<<
+/Type /Font
+/BaseFont /Times-BoldItalic
+/Subtype /Type1
+/Encoding /WinAnsiEncoding
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+17 0 obj
+<<
+/Type /Font
+/BaseFont /ZapfDingbats
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+18 0 obj
+<<
+/Type /Font
+/BaseFont /Symbol
+/Subtype /Type1
+/FirstChar 32
+/LastChar 255
+>>
+endobj
+2 0 obj
+<<
+/ProcSet [/PDF /Text /ImageB /ImageC /ImageI]
+/Font <<
+/F1 5 0 R
+/F2 6 0 R
+/F3 7 0 R
+/F4 8 0 R
+/F5 9 0 R
+/F6 10 0 R
+/F7 11 0 R
+/F8 12 0 R
+/F9 13 0 R
+/F10 14 0 R
+/F11 15 0 R
+/F12 16 0 R
+/F13 17 0 R
+/F14 18 0 R
+>>
+/XObject <<
+>>
+>>
+endobj
+19 0 obj
+<<
+/Producer (jsPDF 2.5.1)
+/CreationDate (D:20261020103956-00'00')
+>>
+endobj
+20 0 obj
+<<
+/Type /Catalog
+/Pages 1 0 R
+/OpenAction [3 0 R /FitH null]
+/PageLayout /OneColumn
+>>
+endobj
+xref
+0 21
+0000000000 65535 f 
+0000007885 00000 n 
+0000009702 00000 n 
+0000000015 00000 n 
+0000000152 00000 n 
+0000007942 00000 n 
+0000008067 00000 n 
+0000008197 00000 n 
+0000008330 00000 n 
+0000008467 00000 n 
+0000008590 00000 n 
+0000008719 00000 n 
+0000008851 00000 n 
+0000008987 00000 n 
+0000009115 00000 n 
+0000009242 00000 n 
+0000009371 00000 n 
+0000009504 00000 n 
+0000009606 00000 n 
+0000009950 00000 n 
+0000010036 00000 n 
+trailer
+<<
+/Size 21
+/Root 20 0 R
+/Info 19 0 R
+/ID [ <0AE63775B067D0DF04C34741C7E3B6EA> <0AE63775B067D0DF04C34741C7E3B6EA> ]
+>>
+startxref
+10140
+%%EOF
