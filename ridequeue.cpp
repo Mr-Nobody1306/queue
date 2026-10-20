@@ -67,9 +67,9 @@ struct RideQueue {
 int main() {
     RideQueue q;
     std::cout << "=== RideQueue dispatch (circular array) ===\n";
-    q.enqueue(101, "Mr. Nobody", "Airport", "Osu");
-    q.enqueue(102, "Kwame Mensah", "Legon", "Makola");
-    q.enqueue(103, "Auntie Efya", "Tema", "Airport");
+    q.enqueue(101, "Ama", "Airport", "Osu");
+    q.enqueue(102, "Kwame", "Legon", "Makola");
+    q.enqueue(103, "Efya", "Tema", "Airport");
     q.print();
 
     std::cout << "peek: next up is " << q.peek()->rider << "\n";
@@ -78,8 +78,8 @@ int main() {
     std::cout << "dispatched #" << trip.id << " " << trip.rider << " to Driver-1\n";
     q.print();
 
-    q.enqueue(104, "Yaw Darko", "Osu", "Legon");
-    q.enqueue(105, "Mama Akos", "Makola", "Tema");
+    q.enqueue(104, "Yaw", "Osu", "Legon");
+    q.enqueue(105, "Akos", "Makola", "Tema");
     q.print(); // rear index wrapped around the end of the array
 
     q.cancelAt(1); // rider cancels: tail shifts left
